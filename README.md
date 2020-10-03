@@ -44,7 +44,11 @@
 
 ### Self-supervised learning B 10:00 AM - 10:30 AM CDT on Monday, 5 October
 
-* [ ] User-Guided Domain Adaptation for Rapid Annotation from User Interactions: A Study on Pathological Liver Segmentation - Raju, Ashwin; Ji, Zhanghexuan; Cheng, Chi Tung; Cai, Jinzheng; Huang, Junzhou; Xiao, Jing; Lu, Le; Liao, ChienHung; Harrison, Adam P., University of Texas, Arlington
+* [x] User-Guided Domain Adaptation for Rapid Annotation from User Interactions: A Study on Pathological Liver Segmentation - Raju, Ashwin; Ji, Zhanghexuan; Cheng, Chi Tung; Cai, Jinzheng; Huang, Junzhou; Xiao, Jing; Lu, Le; Liao, ChienHung; Harrison, Adam P., University of Texas, Arlington
+
+- Liver segmentation is not that challenging task. It would be nicer if this approach can be shown effective on other tasks, such as liver tumor.
+- I assume this method is in 2D. Liver is a 3D object; liver in 2D can appear very differently. How to design a loss to constrain liver shape distribution?
+
 * [x] SALAD: Self-Supervised Aggregation Learning for Anomaly Detection on X-Rays - Bozorgtabar, Behzad; Mahapatra, Dwarikanath; Vray, Guillaume; Thiran, Jean-Philippe, EPFL
 
 - Contrastive learning with memory bank in ChestXray imaging. The approach finds the abnormal images by comparing with the normal image feature in the latent space.
@@ -53,6 +57,8 @@
 
 * [x] Scribble-based Domain Adaptation via Deep Co-Segmentation - Dorent, Reuben; Joutard, Samuel; Shapey, Jonathan; Bisdas, Sotirios; Kitchen, Neil; Bradford, Robert ; Saeed, Shakeel; Modat, Marc; Ourselin, Sébastien; Vercauteren, Tom, King's College London
 
+- Assumption 1: Within modality, the voxel with similar spatial location and similar intensity value should belong to the same class.
+- Assumption 2: Across modalities, the voxel with similar feature should belong to the same class. (I'm not sure about this assumption: would this inject many noisy?)
 - How big is the materix to connect all image voxel within and between images in the dataset?
 
 
@@ -63,7 +69,12 @@
 - Entropy minimisation is used in target segmentation where the label is not available. If solely minimizing entropy, the model would predict a blank mask (entropy = 0), therefore, we need an additional loss to ensure class prior. The problem is that class prior does not consider the global structure of the object but only ensure the class ratio. Probably this is the reason why the authors want to train a network to describe class prior.
 - I'm not fully understand the conclusion of "entropy regularisation is a useful alternative to supervision in _source_".
 
-* [ ] Region-of-interest guided Supervoxel Inpainting for Self-supervision - Kayal, Subhradeep; Chen, Shuai; de Bruijne, Marleen, Erasmus MC
+* [x] Region-of-interest guided Supervoxel Inpainting for Self-supervision - Kayal, Subhradeep; Chen, Shuai; de Bruijne, Marleen, Erasmus MC
+
+- In-painting diseased regions (using label and super-pixel) is more important than random regions. Would the learned representation be bias on this specific disease, sacrificing the generalizability?
+- "Restart U-Net"? Why we need this restart U-Net? If restart U-Net outperforms vanilla U-Net, does it mean the vanilla U-Net has not converged?
+- The method requires ground truth, why is it called self-supervised learning? I think it is more like a co-training.
+
 * [x] Harnessing Uncertainty in Domain Adaptation for MRI Prostate Lesion Segmentation - Chiou, Eleni; Giganti, Francesco; Punwani, Shonit; Kokkinos, Iasonas; Panagiotaki,, Eleftheria, University College London (&#9733;)
 
 - Generate high-quality synthetic images as data augmentation for image segmentation task. For example, if there are large number of images and segmentation masks in dataset A, but limited labeled images in dataset B, this method can be used to improve the segmentation accuracy for dataset B.
