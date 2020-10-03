@@ -13,6 +13,16 @@
 * [x] Region-of-interest guided Supervoxel Inpainting for Self-supervision - Kayal, Subhradeep; Chen, Shuai; de Bruijne, Marleen, Erasmus MC
 * [x] Harnessing Uncertainty in Domain Adaptation for MRI Prostate Lesion Segmentation - Chiou, Eleni; Giganti, Francesco; Punwani, Shonit; Kokkinos, Iasonas; Panagiotaki,, Eleftheria, University College London
 
+### Semi-supervised Learning C 10:30 AM - 11:00 AM CDT on Monday, 5 October
+
+Deep Q-Network-Driven Catheter Segmentation in 3D US by Hybrid Constrained Semi-Supervised Learning and Dual-UNet - Yang, Hongxu; Shan, Caifeng; Kolen, Alexander F.; de With, P. H. N., Eindhoven University of Technology
+Domain Adaptive Relational Reasoning for 3D Multi-Organ Segmentation - Fu, Shuhao; Lu, Yongyi; Wang, Yan; Zhou, Yuyin; Shen, Wei; Fishman, Elliot K.; Yuille, Alan, Johns Hopkins University
+Realistic Adversarial Data Augmentation for MR Image Segmentation - Chen, Chen; Qin, Chen; Qiu, Huaqi; Ouyang, Cheng; Wang, Shuo; Chen, Liang; Tarroni, Giacomo; Bai, Wenjia; Rueckert, Daniel, Imperial College London
+Learning to Segment Anatomical Structures Accurately from One Exemplar - Lu, Yuhang; Li, Weijian; Zheng, Kang; Wang, Yirui; Harrison, Adam P.; Lin, Chihung; Wang, Song; Xiao, Jing; Lu, Le; Chang-Fu, Kuo; Miao, Shun, University of South Carolina
+Uncertainty estimates as data selection criteria to boost omni-supervised learning - Venturini, Lorenzo; Papageorghiou, Aris T.; Noble, J. Alison; Namburete, Ana I.L., University of Oxford
+Extreme Consistency: Overcoming Annotation Scarcity and Domain Shifts - Fotedar, Gaurav; Tajbakhsh, Nima; Pundi Ananth, Shilpa; Ding, Xiaowei, Voxelcloud
+Spatio-temporal Consistency and Negative LabelTransfer for 3D freehand US Segmentation - Gonzalez Duque, Vanessa; Al Chanti, Dawood; Crouzier, Marion; Nordez, Antoine; Lacourpaille, Lilian; Mateus, Diana, LS2N
+
 ### Machine Learning Applications A 11:00 AM - 11:30 AM CDT on Monday, 5 October
 
 * [x] Joint Modeling of Chest Radiographs and Radiology Reports for Pulmonary Edema Assessment - Chauhan, Geeticka; Liao, Ruizhi; Wells III, William M.; Andreas, Jacob; Wang, Xin; Berkowitz, Seth; Horng, Steven; Szolovits, Peter; Golland, Polina, Massachusetts Institute of Technology (MIT)
