@@ -53,7 +53,7 @@
 
 * [x] Scribble-based Domain Adaptation via Deep Co-Segmentation - Dorent, Reuben; Joutard, Samuel; Shapey, Jonathan; Bisdas, Sotirios; Kitchen, Neil; Bradford, Robert ; Saeed, Shakeel; Modat, Marc; Ourselin, Sébastien; Vercauteren, Tom, King's College London
 
-
+- How big is the materix to connect all image voxel within and between images in the dataset?
 
 
 * [x] Source-Relaxed Domain Adaptation for Image Segmentation - Bateson, Mathilde; Kervadec, Hoel; Dolz, Jose; Lombaert, Hervé; Ben Ayed, Ismail, ETS Montréal
