@@ -8,7 +8,7 @@
 
 * [x] Joint Modeling of Chest Radiographs and Radiology Reports for Pulmonary Edema Assessment - Chauhan, Geeticka; Liao, Ruizhi; Wells III, William M.; Andreas, Jacob; Wang, Xin; Berkowitz, Seth; Horng, Steven; Szolovits, Peter; Golland, Polina, Massachusetts Institute of Technology (MIT)
 
-This paper aims to classify three labels from chest radiographs and their reports. The input consists of a pair of image and text report. They joint train an imaging encoder and a text encoder (BERT) and in the inference, they only take the trained imaging encoder. Experiments show better performance achieved by joint training than isolated training.
+- This paper aims to classify three labels from chest radiographs and their reports. The input consists of a pair of image and text report. They joint train an imaging encoder and a text encoder (BERT) and in the inference, they only take the trained imaging encoder. Experiments show better performance achieved by joint training than isolated training.
 Q: How to train the unpaired data?
 
 * [x] Domain-specific loss design for unsupervised physical training: A new approach to modeling medical ML solutions - Burwinkel, Hendrik; Matz, Holger; Saur, Stefan; Hauger, Christoph; Evren, Ayse Mine; Hirnschall, Nino; Findl, Oliver; Navab, Nassir; Ahmadi, Seyed-Ahmad, TU München
