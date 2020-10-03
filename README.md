@@ -4,6 +4,15 @@
 - Release code? When comparing with other works, what if their work implementation is not publicly available?
 - Dataset size, how to ensure a robust evaluation when data is small? Limited labled data make both training and evaluating difficult. How to ensure a fair comparison?
 
+### Self-supervised learning B 10:00 AM - 10:30 AM CDT on Monday, 5 October
+
+* [x] User-Guided Domain Adaptation for Rapid Annotation from User Interactions: A Study on Pathological Liver Segmentation - Raju, Ashwin; Ji, Zhanghexuan; Cheng, Chi Tung; Cai, Jinzheng; Huang, Junzhou; Xiao, Jing; Lu, Le; Liao, ChienHung; Harrison, Adam P., University of Texas, Arlington
+* [x] SALAD: Self-Supervised Aggregation Learning for Anomaly Detection on X-Rays - Bozorgtabar, Behzad; Mahapatra, Dwarikanath; Vray, Guillaume; Thiran, Jean-Philippe, EPFL
+* [x] Scribble-based Domain Adaptation via Deep Co-Segmentation - Dorent, Reuben; Joutard, Samuel; Shapey, Jonathan; Bisdas, Sotirios; Kitchen, Neil; Bradford, Robert ; Saeed, Shakeel; Modat, Marc; Ourselin, Sébastien; Vercauteren, Tom, King's College London
+* [x] Source-Relaxed Domain Adaptation for Image Segmentation - Bateson, Mathilde; Kervadec, Hoel; Dolz, Jose; Lombaert, Hervé; Ben Ayed, Ismail, ETS Montréal
+* [x] Region-of-interest guided Supervoxel Inpainting for Self-supervision - Kayal, Subhradeep; Chen, Shuai; de Bruijne, Marleen, Erasmus MC
+* [x] Harnessing Uncertainty in Domain Adaptation for MRI Prostate Lesion Segmentation - Chiou, Eleni; Giganti, Francesco; Punwani, Shonit; Kokkinos, Iasonas; Panagiotaki,, Eleftheria, University College London
+
 ### Machine Learning Applications A 11:00 AM - 11:30 AM CDT on Monday, 5 October
 
 * [x] Joint Modeling of Chest Radiographs and Radiology Reports for Pulmonary Edema Assessment - Chauhan, Geeticka; Liao, Ruizhi; Wells III, William M.; Andreas, Jacob; Wang, Xin; Berkowitz, Seth; Horng, Steven; Szolovits, Peter; Golland, Polina, Massachusetts Institute of Technology (MIT)
