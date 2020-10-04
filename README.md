@@ -2,7 +2,10 @@
 
 ### General questions:
 - Release code? When comparing with other works, what if their work implementation is not publicly available?
-- Dataset size, how to ensure a robust evaluation when data is small? Limited labled data make both training and evaluating difficult. How to ensure a fair comparison?
+- Dataset size, how to ensure a reliable evaluation when data is small? Limited labled data make both training and evaluating difficult.
+
+### General comments:
+- I think supervised domain adaption (SDA) makes more sense than unsupervised domain adaptation (UDA). To evaluate the UDA, we have to collect large amount of labeled data for target task anyhow. If annotation in the target domain cannot be avoid, why not supervisely train models on these annotations? In this case, one may argue that we do not have test set for target tasks. However, we all agree that supervised models outperform UDA models in general, so we do not really need an additional test set to approve this assumption. In summary, instead of using the annotated data in the target task for evaluation purpose, directly use it as annotation for supervised training. That's why I believe SDA makes more sense than UDA. 
 
 ### Self-supervised learning A 5:30 AM - 6:00 AM CDT on Monday, 5 October
 
@@ -14,7 +17,7 @@
     - This consistency loss is very similar to Extreme Consistency (Fotedar et al. MICCAI 2020).
     - Since the labeled source domain should also fully annotated for segmenting the same object as target domain, can I understand this work uses way more annotations than other baselines? For example, I have dataset A (source domain) consisting of 1,000 labeled images for lung segmentation, another dataset B (target domain) with 10 labeled images for lung segmentation. This method basically adapts labels from A to B so as to, somehow, merge two datasets together. I think it is interesting to have a performance reference, in which the model is supervised trained on both datasets A and B, to demonstrate this domain adaptation benefits a lot compared with simply merging two datasets and training.
 
-* [ ] Test-time Unsupervised Domain Adaptation - Varsavsky, Thomas; Orbes-Arteaga, Mauricio; Sudre, Carole H.; Graham, Mark S.; Nachev, Parashkev; Cardoso, M. Jorge, University College London
+* [x] Test-time Unsupervised Domain Adaptation - Varsavsky, Thomas; Orbes-Arteaga, Mauricio; Sudre, Carole H.; Graham, Mark S.; Nachev, Parashkev; Cardoso, M. Jorge, University College London
 
     - 
 
