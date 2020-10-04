@@ -101,7 +101,7 @@
   - Note: Entropy minimization is used in target segmentation where the label is not available. If solely minimizing entropy, the model would predict a blank mask (entropy = 0); therefore, we need an additional loss to ensure class prior. The problem is that class prior does not consider the object's global structure but only ensures the class ratio. Probably this is the reason why the authors want to train a network to describe class prior.
   - Note: I do not fully understand the conclusion of "entropy regularisation is a useful alternative to supervision in _source_".
 
-* [x] Region-of-interest guided Supervoxel Inpainting for Self-supervision - Kayal, Subhradeep; Chen, Shuai; de Bruijne, Marleen, Erasmus MC
+* [x] Region-of-interest guided Supervoxel Inpainting for Self-supervision
   - Speaker: Subhradeep Kayal
   - Q: If restart U-Net outperforms vanilla U-Net, does it mean the vanilla U-Net has not converged?
   - Note: In-painting diseased regions (using label and super-pixel) is more important than random regions. Would the learned representation be bias on this specific disease, sacrificing the generalizability?
@@ -117,42 +117,44 @@
 
 ### Semi-supervised Learning C 10:30 AM - 11:00 AM CDT on Monday, 5 October
 
-* [x] Deep Q-Network-Driven Catheter Segmentation in 3D US by Hybrid Constrained Semi-Supervised Learning and Dual-UNet - Yang, Hongxu; Shan, Caifeng; Kolen, Alexander F.; de With, P. H. N., Eindhoven University of Technology
+* [x] Deep Q-Network-Driven Catheter Segmentation in 3D US by Hybrid Constrained Semi-Supervised Learning and Dual-UNet
+  - Speaker: Hongxu Yang
+  - Q: What is the objective function (reward) in the deep Q network?
 
- - What is the objective function (reward) in the deep Q network?
+* [x] Domain Adaptive Relational Reasoning for 3D Multi-Organ Segmentation
+  - Speaker: Shuhao Fu
+  - Note: Auxiliary self-supervised learning tasks with supervised learning.
+   Since domain adaption performance is not higher than supervised learning (upper bound), in practice, to achieve acceptable performance, we still recommend collecting labels for different domains.
 
-* [x] Domain Adaptive Relational Reasoning for 3D Multi-Organ Segmentation - Fu, Shuhao; Lu, Yongyi; Wang, Yan; Zhou, Yuyin; Shen, Wei; Fishman, Elliot K.; Yuille, Alan, Johns Hopkins University
+* [x] Realistic Adversarial Data Augmentation for MR Image Segmentation (&#9733;)
+  - Speaker: Chen Chen
+  - Q: Why the bias field is specifically designed for MR images? Would it be useful for CT images?
+  - Note: Traditional data augmentation includes affine&elastic transformation and photometric transformation. Advanced data augmentation covers data mixing, generative network-based, and adversarial data augmentation.
+  - Note: Adversarial noise may not exist in the real world medical imaging, therefore cannot contribute to model generalizability much. This work proposes a realistic adversarial augmentation, designed explicitly for MR imaging.
+  - Note: How to evaluate model generalizability?
+  - Note: I love the bias field idea! Compare this with non-linear transformation.
 
- - Auxiliary self-supervised learning tasks with supervised learning.
- Since domain adaption performance is not higher than supervised learning (upper bound), in practice, to achieve acceptable performance, we still recommend collecting labels for different domains.
+* [x] Learning to Segment Anatomical Structures Accurately from One Exemplar (&#9733;)
+  - Speaker: Yuhang Lu
+  - Q: How to find the examplar image from a dataset? Have you investigated any performance difference if you choose different images as examplar?
 
-* [x] Realistic Adversarial Data Augmentation for MR Image Segmentation - Chen, Chen; Qin, Chen; Qiu, Huaqi; Ouyang, Cheng; Wang, Shuo; Chen, Liang; Tarroni, Giacomo; Bai, Wenjia; Rueckert, Daniel, Imperial College London (&#9733;)
+* [x] Uncertainty estimates as data selection criteria to boost omni-supervised learning (&#9733;)
+  - Speaker: Lorenzo Venturini
+  - Q: Could you please discuss the difference between Omni-supervised learning in this work and active learning in image segmentation?
+  - Note: Two interesting concepts: epistemic (model) uncertainty and aleatoric (data) uncertainty 
 
- - Traditional data augmentation includes affine&elastic transformation and photometric transformation. Advanced data augmentation covers data mixing, generative network-based, and adversarial data augmentation.
- - Adversarial noise may not exist in the real world medical imaging, therefore cannot contribute to model generalizability much. This work proposes a realistic adversarial augmentation, designed explicitly for MR imaging.
- - How to evaluate model generalizability?
- - Why the bias field is specifically designed for MR? Any use in CT modality?
- - I love the bias field idea! Compare this with non-linear transformation.
+* [x] Extreme Consistency: Overcoming Annotation Scarcity and Domain Shifts
+  - Speaker: Gaurav Fotedar
+  - Q: Is it possible that the extreme augmentation, for example image mixing, makes the object disappear, making the segmentation task infeasible?
+  - Note: Consistency loss between teacher and student networks
+   
 
-* [x] Learning to Segment Anatomical Structures Accurately from One Exemplar - Lu, Yuhang; Li, Weijian; Zheng, Kang; Wang, Yirui; Harrison, Adam P.; Lin, Chihung; Wang, Song; Xiao, Jing; Lu, Le; Chang-Fu, Kuo; Miao, Shun, University of South Carolina (&#9733;)
-
- - How to find the examplar image from a dataset?
-
-* [x] Uncertainty estimates as data selection criteria to boost omni-supervised learning - Venturini, Lorenzo; Papageorghiou, Aris T.; Noble, J. Alison; Namburete, Ana I.L., University of Oxford (&#9733;)
-
- - What is the difference between Omni-supervised learning in this work and active learning in image segmentation?
- - Two interesting concepts: epistemic (model) uncertainty and aleatoric (data) uncertainty 
-
-* [x] Extreme Consistency: Overcoming Annotation Scarcity and Domain Shifts - Fotedar, Gaurav; Tajbakhsh, Nima; Pundi Ananth, Shilpa; Ding, Xiaowei, Voxelcloud
-
- - Consistency loss between teacher and student networks
- - Would the extreme augmentation (image mixing) make an object disappear, leading to the segmentation task infeasible?
-
-* [x] Spatio-temporal Consistency and Negative LabelTransfer for 3D freehand US Segmentation - Gonzalez Duque, Vanessa; Al Chanti, Dawood; Crouzier, Marion; Nordez, Antoine; Lacourpaille, Lilian; Mateus, Diana, LS2N
-
- - Handle missing labels of slices in 3D volume.
- - Auxiliary reconstruction with segmentation task.
- - How to distinguish the images without annotation and without object (all background)?
+* [x] Spatio-temporal Consistency and Negative LabelTransfer for 3D freehand US Segmentation
+  - Speaker: Vanessa Gonzalez Duque
+  - Q: How to distinguish the images without annotation and without object (all background)?
+  - Note: Handle missing labels of slices in 3D volume.
+  - Note: Auxiliary reconstruction with segmentation task.
+    
 
 ### Machine Learning Applications A 11:00 AM - 11:30 AM CDT on Monday, 5 October
 
