@@ -37,8 +37,8 @@
 
 * [x] User-Guided Domain Adaptation for Rapid Annotation from User Interactions: A Study on Pathological Liver Segmentation - Raju, Ashwin; Ji, Zhanghexuan; Cheng, Chi Tung; Cai, Jinzheng; Huang, Junzhou; Xiao, Jing; Lu, Le; Liao, ChienHung; Harrison, Adam P., University of Texas, Arlington
 
-- Liver segmentation is not that challenging task. It would be nicer if this approach can be shown effective on other tasks, such as liver tumor.
-- I assume this method is in 2D. Liver is a 3D object; liver in 2D can appear very differently. How to design a loss to constrain liver shape distribution?
+    - Liver segmentation is not that challenging task. It would be nicer if this approach can be shown effective on other tasks, such as liver tumor.
+    - I assume this method is in 2D. Liver is a 3D object; liver in 2D can appear very differently. How to design a loss to constrain liver shape distribution?
 
 * [x] SALAD: Self-Supervised Aggregation Learning for Anomaly Detection on X-Rays - Bozorgtabar, Behzad; Mahapatra, Dwarikanath; Vray, Guillaume; Thiran, Jean-Philippe, EPFL
 
@@ -75,7 +75,10 @@
 
 ### Semi-supervised Learning C 10:30 AM - 11:00 AM CDT on Monday, 5 October
 
-* [ ] Deep Q-Network-Driven Catheter Segmentation in 3D US by Hybrid Constrained Semi-Supervised Learning and Dual-UNet - Yang, Hongxu; Shan, Caifeng; Kolen, Alexander F.; de With, P. H. N., Eindhoven University of Technology
+* [x] Deep Q-Network-Driven Catheter Segmentation in 3D US by Hybrid Constrained Semi-Supervised Learning and Dual-UNet - Yang, Hongxu; Shan, Caifeng; Kolen, Alexander F.; de With, P. H. N., Eindhoven University of Technology
+
+- What is the objective function (reward) in the deep Q network?
+
 * [x] Domain Adaptive Relational Reasoning for 3D Multi-Organ Segmentation - Fu, Shuhao; Lu, Yongyi; Wang, Yan; Zhou, Yuyin; Shen, Wei; Fishman, Elliot K.; Yuille, Alan, Johns Hopkins University
 
 - Auxiliary self-supervised learning tasks with supervised learning.
