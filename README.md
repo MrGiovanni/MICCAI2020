@@ -1,11 +1,13 @@
 # MICCAI2020
 
-### General questions:
+### Questions to panel:
 - Release code? When comparing with other works, what if their work implementation is not publicly available?
 - Dataset size, how to ensure a reliable evaluation when data is small? Limited labeled data make both training and evaluating difficult.
 
 ### General comments:
 - I think supervised domain adaption (SDA) makes more sense than unsupervised domain adaptation (UDA). To evaluate the UDA, we have to collect a large amount of labeled data for the target task anyhow. If the annotation in the target domain cannot be avoided, why not train models in a supervised manner on these annotations? In this case, one may argue that we do not have a test set for the target task. It is true, but we all agree that supervised models are supposed to outperform UDA models in general, so we do not need an additional test set to approve this assumption. Instead of using the annotated data in the target task for evaluation purposes, I would directly employ it as an available annotation for supervised training.
+
+## Individual paper questions
 
 ### Self-supervised learning A 5:30 AM - 6:00 AM CDT on Monday, 5 October
 
@@ -34,15 +36,25 @@
 * [x] Entropy Guided Unsupervised Domain Adaptation for Cross-Center Hip Cartilage Segmentation from MRI - Zeng, Guodong; Schmaranzer, Florian; Lerch, Till D.; Boschung, Adam; Zheng, Guoyan; Burger, Jürgen; Gerber, Kate; Tannast, Moritz; Siebenrock, Klaus; Kim, Young-Jo; Novais, Eduardo N.; Gerber, Nicolas University of Bern
 
     - Unsupervised domain adaption: image appearance adaptation (the one in the Fixed-Point GAN journal version) and feature alignment (learning domain invariant feature).
-    - Two discriminators: one for distinguishing feature maps between two domains, the other for distingishing entropy maps between two domains (this is new). What is the intuition behind entropy alignment? The purpose explained in the paper is to let model focus more on uncertain regions, but I cannot relate this purpose with the proposed methodology (align entropy maps between source and target domains).
+    - There are two discriminators: one for distinguishing feature maps between two domains, the other for distingishing entropy maps between two domains (this is new). What is the intuition behind entropy alignment? The purpose explained in the paper is to let model focus more on uncertain regions, but I cannot relate this purpose with the proposed methodology (align entropy maps between source and target domains).
 
 
 
 ### Semi-supervised learning A 6:00 AM - 6:30 AM CDT on Monday, 5 October
 
-* [ ] Deep Semi-supervised Knowledge Distillation for Overlapping Cervical Cell Instance Segmentation - Zhou, Yanning; Chen, Hao; Lin, Huangjing; Heng, Pheng-Ann, The Chinese University of HongKong
+* [x] Deep Semi-supervised Knowledge Distillation for Overlapping Cervical Cell Instance Segmentation - Zhou, Yanning; Chen, Hao; Lin, Huangjing; Heng, Pheng-Ann, The Chinese University of HongKong
+
+    - Semi-supervised learning: consistency regularization, pseudo-labeling, entropy-based methods.
+    - 
+
 * [ ] DMNet: Difference Minimization Network for Semi-supervised Segmentation in Medical Images - Fang, Kang; Li, Wu-Jun, Nanjing University
 * [ ] Double-uncertainty Weighted Method for Semi-supervised Learning - Wang, Yixin; Zhang, Yao; Tian, Jiang; Zhong, Cheng; Shi, Zhongchao; Zhang, Yang; He, Zhiqiang Institute of Computing Technology, Chinese Academy of Sciences; University of Chinese Academy of Sciences
+
+    - Segmentation uncertainty: entropy of each predicted pixel class.
+    - Why do we need a teacher-student network here?
+    - [_new_] Feature uncertainty. I do not follow the intuition of measuring feature uncertainty illustrated in the presentation. To compare the consistency of activated regions in the feature maps, why not directly calculate the distance between each feature map in teacher and student networks?
+
+
 * [ ] Shape-aware Semi-supervised 3D Semantic Segmentation for Medical Images - Li, Shuailin; Zhang, Chuyu; He, Xuming, PLUS Lab, Shanghaitech University
 * [ ] Local and Global Structure-aware Entropy Regularized Mean Teacher Model for 3D Left Atrium segmentation - Hang, Wenlong; Feng, Wei; Liang, Shuang; Yu, Lequan; Wang, Qiong; Choi, Kup-Sze; Qin, Jing, Nanjing TECH University
 * [ ] Improving dense pixelwise prediction of epithelial density using unsupervised data augmentation for consistency regularization - To, Minh Nguyen Nhat; Sankineni, Sandeep; Xu, Sheng; Turkbey, Baris; Pinto, Peter A.; Moreno, Vanessa; Merino, Maria; Wood, Bradford J.; Kwak, Jin Tae, Sejong University
@@ -59,41 +71,47 @@
 
 ### Self-supervised learning B 10:00 AM - 10:30 AM CDT on Monday, 5 October
 
-* [x] User-Guided Domain Adaptation for Rapid Annotation from User Interactions: A Study on Pathological Liver Segmentation - Raju, Ashwin; Ji, Zhanghexuan; Cheng, Chi Tung; Cai, Jinzheng; Huang, Junzhou; Xiao, Jing; Lu, Le; Liao, ChienHung; Harrison, Adam P., University of Texas, Arlington
+* [x] User-Guided Domain Adaptation for Rapid Annotation from User Interactions: A Study on Pathological Liver Segmentation
+  - Speaker: Ashwin Raju
+  - Q: Have you evaluated this approach on smaller objects, such as liver tumor segmentation?
+  - Note: Liver segmentation is not a challenging task. It would be nicer if this approach can be effective on other tasks, such as segmenting liver tumors.
+  - Note: I assume this method is in 2D. The liver is a 3D object; in a 2D view, it can appear very differently. How to design a loss to constrain liver shape distribution?
 
- - Liver segmentation is not a challenging task. It would be nicer if this approach can be effective on other tasks, such as segmenting liver tumors.
- - I assume this method is in 2D. The liver is a 3D object; in a 2D view, it can appear very differently. How to design a loss to constrain liver shape distribution?
+* [x] SALAD: Self-Supervised Aggregation Learning for Anomaly Detection on X-Rays
+  - Speaker: Behzad Bozorgtabar
+  - Q: ChestXray dataset has 14 labeled diseases. Would this anomaly detection model find any diseases outside these 14 categories?
+  - Note: Contrastive learning with memory bank in ChestXray imaging. The approach finds the abnormal images by comparing it with the normal image feature in the latent space.
+  - Note: How to define abnormal images in the ChestXray dataset? Healthy and diseased classes? If so, why not directly train a binary classifier? If all 14 diseases in the dataset are considered abnormal, how to guarantee the model can detect abnormal images with diseases outside these 14 categories?
+  - Note: By simply auto-encoding normal images, would abnormal images automatically detected in the inference?
 
-* [x] SALAD: Self-Supervised Aggregation Learning for Anomaly Detection on X-Rays - Bozorgtabar, Behzad; Mahapatra, Dwarikanath; Vray, Guillaume; Thiran, Jean-Philippe, EPFL
-
- - Contrastive learning with memory bank in ChestXray imaging. The approach finds the abnormal images by comparing it with the normal image feature in the latent space.
- - How to define abnormal images in the ChestXray dataset? Healthy and diseased classes? If so, why not directly train a binary classifier? If all 14 diseases in the dataset are considered abnormal, how to guarantee the model can detect abnormal images with diseases outside these 14 categories?
- - By simply auto-encoding normal images, would abnormal images automatically detected in the inference?
-
-* [x] Scribble-based Domain Adaptation via Deep Co-Segmentation - Dorent, Reuben; Joutard, Samuel; Shapey, Jonathan; Bisdas, Sotirios; Kitchen, Neil; Bradford, Robert ; Saeed, Shakeel; Modat, Marc; Ourselin, Sébastien; Vercauteren, Tom, King's College London
-
- - Assumption 1: Within modality, the voxel with similar spatial location and similar intensity value should belong to the same class.
- - Assumption 2: Across modalities, the voxel with similar features should belong to the same class. (I'm not sure about this assumption: would this inject many noisy?)
- - How big is the matrix to connect all image voxel within and between images in the dataset?
+* [x] Scribble-based Domain Adaptation via Deep Co-Segmentation
+  - Speaker: Reuben Dorent
+  - Q: How much memory is needed to compute a matrix that records voxels' connection within and among images in the dataset?
+  - Q: You assume that across different modalities, the voxel with similar features should share with the same label. Would this assumption inject many noises?
+  - Assumption 1: Within modality, the voxel with similar spatial location and similar intensity value should belong to the same class.
+  - Assumption 2: Across modalities, the voxel with similar features should belong to the same class. (I'm not sure about this assumption: would this inject many noisy?)
+   
 
 
-* [x] Source-Relaxed Domain Adaptation for Image Segmentation - Bateson, Mathilde; Kervadec, Hoel; Dolz, Jose; Lombaert, Hervé; Ben Ayed, Ismail, ETS Montréal
-
- - Domain adaption without using source domain data and target domain labels. In addition to entropy minimization, this paper introduces a class ratio loss term.
- - Why train a class ratio predictor from the source data? The class ratio should be easily accessible from data.
- - Entropy minimization is used in target segmentation where the label is not available. If solely minimizing entropy, the model would predict a blank mask (entropy = 0); therefore, we need an additional loss to ensure class prior. The problem is that class prior does not consider the object's global structure but only ensures the class ratio. Probably this is the reason why the authors want to train a network to describe class prior.
- - I do not fully understand the conclusion of "entropy regularisation is a useful alternative to supervision in _source_".
+* [x] Source-Relaxed Domain Adaptation for Image Segmentation
+  - Speaker: Mathilde Bateson
+  - Q: Could you please elaborate more about the conclusion: "entropy regularisation is a useful alternative to supervision in _source_". Why is it in the source domain?
+  - Note: Domain adaption without using source domain data and target domain labels. In addition to entropy minimization, this paper introduces a class ratio loss term.
+  - Note: Why train a class ratio predictor from the source data? The class ratio should be easily accessible from data.
+  - Note: Entropy minimization is used in target segmentation where the label is not available. If solely minimizing entropy, the model would predict a blank mask (entropy = 0); therefore, we need an additional loss to ensure class prior. The problem is that class prior does not consider the object's global structure but only ensures the class ratio. Probably this is the reason why the authors want to train a network to describe class prior.
+  - Note: I do not fully understand the conclusion of "entropy regularisation is a useful alternative to supervision in _source_".
 
 * [x] Region-of-interest guided Supervoxel Inpainting for Self-supervision - Kayal, Subhradeep; Chen, Shuai; de Bruijne, Marleen, Erasmus MC
+  - Speaker: Subhradeep Kayal
+  - Q: If restart U-Net outperforms vanilla U-Net, does it mean the vanilla U-Net has not converged?
+  - Note: In-painting diseased regions (using label and super-pixel) is more important than random regions. Would the learned representation be bias on this specific disease, sacrificing the generalizability?
+  - Note: "Restart U-Net"? Why we need this restart U-Net? If restart U-Net outperforms vanilla U-Net, does it mean the vanilla U-Net has not converged?
+  - Note: The method requires ground truth; why is it called self-supervised learning? I think it is more like a co-training.
 
- - In-painting diseased regions (using label and super-pixel) is more important than random regions. Would the learned representation be bias on this specific disease, sacrificing the generalizability?
- - "Restart U-Net"? Why we need this restart U-Net? If restart U-Net outperforms vanilla U-Net, does it mean the vanilla U-Net has not converged?
- - The method requires ground truth; why is it called self-supervised learning? I think it is more like a co-training.
-
-* [x] Harnessing Uncertainty in Domain Adaptation for MRI Prostate Lesion Segmentation - Chiou, Eleni; Giganti, Francesco; Punwani, Shonit; Kokkinos, Iasonas; Panagiotaki, Eleftheria, University College London (&#9733;)
-
- - Generate high-quality synthetic images as data augmentation for image segmentation tasks. For example, if there are a large number of images and segmentation masks in dataset A, but limited labeled images in dataset B, this method can be used to improve the segmentation accuracy for dataset B.
- - https://github.com/elchiou/DA (not available yet)
+* [x] Harnessing Uncertainty in Domain Adaptation for MRI Prostate Lesion Segmentation (&#9733;)
+  - Speaker: Eleni Chiou
+  - Note: Generate high-quality synthetic images as data augmentation for image segmentation tasks. For example, if there are a large number of images and segmentation masks in dataset A, but limited labeled images in dataset B, this method can be used to improve the segmentation accuracy for dataset B.
+  - Code: https://github.com/elchiou/DA (not available yet)
 
 
 
