@@ -76,12 +76,38 @@
 ### Semi-supervised Learning C 10:30 AM - 11:00 AM CDT on Monday, 5 October
 
 * [ ] Deep Q-Network-Driven Catheter Segmentation in 3D US by Hybrid Constrained Semi-Supervised Learning and Dual-UNet - Yang, Hongxu; Shan, Caifeng; Kolen, Alexander F.; de With, P. H. N., Eindhoven University of Technology
-* [ ] Domain Adaptive Relational Reasoning for 3D Multi-Organ Segmentation - Fu, Shuhao; Lu, Yongyi; Wang, Yan; Zhou, Yuyin; Shen, Wei; Fishman, Elliot K.; Yuille, Alan, Johns Hopkins University
-* [ ] Realistic Adversarial Data Augmentation for MR Image Segmentation - Chen, Chen; Qin, Chen; Qiu, Huaqi; Ouyang, Cheng; Wang, Shuo; Chen, Liang; Tarroni, Giacomo; Bai, Wenjia; Rueckert, Daniel, Imperial College London
-* [ ] Learning to Segment Anatomical Structures Accurately from One Exemplar - Lu, Yuhang; Li, Weijian; Zheng, Kang; Wang, Yirui; Harrison, Adam P.; Lin, Chihung; Wang, Song; Xiao, Jing; Lu, Le; Chang-Fu, Kuo; Miao, Shun, University of South Carolina
-* [ ] Uncertainty estimates as data selection criteria to boost omni-supervised learning - Venturini, Lorenzo; Papageorghiou, Aris T.; Noble, J. Alison; Namburete, Ana I.L., University of Oxford
-* [ ] Extreme Consistency: Overcoming Annotation Scarcity and Domain Shifts - Fotedar, Gaurav; Tajbakhsh, Nima; Pundi Ananth, Shilpa; Ding, Xiaowei, Voxelcloud
-* [ ] Spatio-temporal Consistency and Negative LabelTransfer for 3D freehand US Segmentation - Gonzalez Duque, Vanessa; Al Chanti, Dawood; Crouzier, Marion; Nordez, Antoine; Lacourpaille, Lilian; Mateus, Diana, LS2N
+* [x] Domain Adaptive Relational Reasoning for 3D Multi-Organ Segmentation - Fu, Shuhao; Lu, Yongyi; Wang, Yan; Zhou, Yuyin; Shen, Wei; Fishman, Elliot K.; Yuille, Alan, Johns Hopkins University
+
+- Auxiliary self-supervised learning tasks with supervised learning.
+- Since the performance of domain adaption is not higher than supervised learning (upper bound), in practice, to achieve an acceptable performance, we still recommend to collect label for different domains.
+
+* [x] Realistic Adversarial Data Augmentation for MR Image Segmentation - Chen, Chen; Qin, Chen; Qiu, Huaqi; Ouyang, Cheng; Wang, Shuo; Chen, Liang; Tarroni, Giacomo; Bai, Wenjia; Rueckert, Daniel, Imperial College London (&#9733;)
+
+- Traditional data augmentation includes affine&elastic transformation and photometric transformation. Advanced data augmentation covers data mixing, generative network-based, and adversarial data augmentation.
+- Adversarial noise may not exist in the real world medical imaging, therefore cannot contribute to model generalizability much. This work proposes a realistic adversarial augmentation, specifically designed for MR imaging.
+- How to evaluate model generalizability?
+- Why the bias field is specifically designed for MR? Any use in CT modality?
+- I love the bias field idea! Compare this with non-linear transformation.
+
+* [x] Learning to Segment Anatomical Structures Accurately from One Exemplar - Lu, Yuhang; Li, Weijian; Zheng, Kang; Wang, Yirui; Harrison, Adam P.; Lin, Chihung; Wang, Song; Xiao, Jing; Lu, Le; Chang-Fu, Kuo; Miao, Shun, University of South Carolina (&#9733;)
+
+- How to find the examplar image from dataset?
+
+* [x] Uncertainty estimates as data selection criteria to boost omni-supervised learning - Venturini, Lorenzo; Papageorghiou, Aris T.; Noble, J. Alison; Namburete, Ana I.L., University of Oxford (&#9733;)
+
+- What is the difference between omni-supervised learning in this work and active learning in image segmentation?
+- Two interesting concepts: epistemic (model) uncertainty and aleatoric (data) uncertainty 
+
+* [x] Extreme Consistency: Overcoming Annotation Scarcity and Domain Shifts - Fotedar, Gaurav; Tajbakhsh, Nima; Pundi Ananth, Shilpa; Ding, Xiaowei, Voxelcloud
+
+- Consistency loss between teacher and student networks
+- Would the extreme augmentation (image mixing) make object disappear, leading to the segmentation task infeasible?
+
+* [x] Spatio-temporal Consistency and Negative LabelTransfer for 3D freehand US Segmentation - Gonzalez Duque, Vanessa; Al Chanti, Dawood; Crouzier, Marion; Nordez, Antoine; Lacourpaille, Lilian; Mateus, Diana, LS2N
+
+- Handle missing labels of slices in 3D volume.
+- Auxiliary reconstruction with segmentation task.
+- How to distinguish the images without annotation and without object (all background)?
 
 ### Machine Learning Applications A 11:00 AM - 11:30 AM CDT on Monday, 5 October
 
