@@ -31,7 +31,9 @@
 
  - To thoroughly validate the performance of domain adaptation, large annotated data is needed. With this in mind, why not we train a supervised model directly on this big labeled data?
 
-* [ ] Entropy Guided Unsupervised Domain Adaptation for Cross-Center Hip Cartilage Segmentation from MRI - Zeng, Guodong; Schmaranzer, Florian; Lerch, Till D.; Boschung, Adam; Zheng, Guoyan; Burger, Jürgen; Gerber, Kate; Tannast, Moritz; Siebenrock, Klaus; Kim, Young-Jo; Novais, Eduardo N.; Gerber, Nicolas University of Bern
+* [x] Entropy Guided Unsupervised Domain Adaptation for Cross-Center Hip Cartilage Segmentation from MRI - Zeng, Guodong; Schmaranzer, Florian; Lerch, Till D.; Boschung, Adam; Zheng, Guoyan; Burger, Jürgen; Gerber, Kate; Tannast, Moritz; Siebenrock, Klaus; Kim, Young-Jo; Novais, Eduardo N.; Gerber, Nicolas University of Bern
+
+    - 
 
 
 
