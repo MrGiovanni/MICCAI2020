@@ -7,9 +7,21 @@
 ### Self-supervised learning A 5:30 AM - 6:00 AM CDT on Monday, 5 October
 
 * [ ] Dual-task Self-supervision for Cross-Modality Domain Adaptation - Xue, Yingying; Feng, Shixiang; Zhang, Ya; Zhang, Xiaoyun; Wang, Yan-Feng, Cooperative Medianet Innovation Center, Shang hai Jiao Tong University
-* [ ] Dual-Teacher: Integrating Intra-domain and Inter-domain Teachers for Annotation-efficient Cardiac Segmentation - Li, Kang; Wang, Shujun; Yu, Lequan; Heng, Pheng-Ann, The Chinese University of Hong Kong
+* [x] Dual-Teacher: Integrating Intra-domain and Inter-domain Teachers for Annotation-efficient Cardiac Segmentation - Li, Kang; Wang, Shujun; Yu, Lequan; Heng, Pheng-Ann, The Chinese University of Hong Kong
+
+    - Utilize labeled source domain data (generating synthetic data by CycleGAN), labeled target domain data, and unlabeled target domain data (consistency loss).
+    - Instead of two teachers helping one student, how about two teachers train jointly? The key question is: why do we need a student network as a bridge?
+    - This consistency loss is very similar to Extreme Consistency (Fotedar et al. MICCAI 2020).
+    - Since the labeled source domain should also fully annotated for segmenting the same object as target domain, can I understand this work uses way more annotations than other baselines? For example, I have dataset A (source domain) consisting of 1,000 labeled images for lung segmentation, another dataset B (target domain) with 10 labeled images for lung segmentation. This method basically adapts labels from A to B so as to, somehow, merge two datasets together. I think it is interesting to have a performance reference, in which the model is supervised trained on both datasets A and B, to demonstrate this domain adaptation benefits a lot compared with simply merging two datasets and training.
+
 * [ ] Test-time Unsupervised Domain Adaptation - Varsavsky, Thomas; Orbes-Arteaga, Mauricio; Sudre, Carole H.; Graham, Mark S.; Nachev, Parashkev; Cardoso, M. Jorge, University College London
-* [ ] Self domain adapted network - He, Yufan; Carass, Aaron; Zuo, Lianrui; Dewey, Blake E.; Prince, Jerry L. johns hopkins university
+
+    - 
+
+* [x] Self domain adapted network - He, Yufan; Carass, Aaron; Zuo, Lianrui; Dewey, Blake E.; Prince, Jerry L. johns hopkins university
+
+    - To thoroughly validate the performance of domain adapation, large annotated data is needed. With this in mind, why not we train a supervised model directly on this big labeled data?
+
 * [ ] Entropy Guided Unsupervised Domain Adaptation for Cross-Center Hip Cartilage Segmentation from MRI - Zeng, Guodong; Schmaranzer, Florian; Lerch, Till D.; Boschung, Adam; Zheng, Guoyan; Burger, Jürgen; Gerber, Kate; Tannast, Moritz; Siebenrock, Klaus; Kim, Young-Jo; Novais, Eduardo N.; Gerber, Nicolas University of Bern
 
 
