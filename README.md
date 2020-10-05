@@ -46,24 +46,39 @@
 ### Semi-supervised learning A 6:00 AM - 6:30 AM CDT on Monday, 5 October
 
 * [x] Deep Semi-supervised Knowledge Distillation for Overlapping Cervical Cell Instance Segmentation
-- Speaker: Yanning Zhou
+  - Speaker: Yanning Zhou
+  - Q: How is your method different from other existing teacher-student network-based knowledge distillation?
+  - Semi-supervised learning: consistency regularization, pseudo-labeling, entropy-based methods.
 
-    - Semi-supervised learning: consistency regularization, pseudo-labeling, entropy-based methods.
-    - 
-
-* [ ] DMNet: Difference Minimization Network for Semi-supervised Segmentation in Medical Images - Fang, Kang; Li, Wu-Jun, Nanjing University
+* [x] DMNet: Difference Minimization Network for Semi-supervised Segmentation in Medical Images
+  - Speaker: Kang Fang
+  - Q: Why the existing co-training based semi-supervised methods cannot be trained end-to-end?
+  - Q: Could you discuss the difference between difference minimization and consistency minimization, which has been widely used in semi-supervised learning?
 
 * [x] Double-uncertainty Weighted Method for Semi-supervised Learning
-    - Speaker: Yixin Wang
-    - Q: What is the advantage and disadvantage of measuring feature uncertainty compared with segmentation uncertainty?
-    - Segmentation uncertainty: entropy of each predicted pixel class.
-    - Note: Why do we need a teacher-student network here?
-    - Note: [_new_] Feature uncertainty. I do not follow the intuition of measuring feature uncertainty illustrated in the presentation. To compare the consistency of activated regions in the feature maps, why not directly calculate the distance between each feature map in teacher and student networks?
+  - Speaker: Yixin Wang
+  - Q: What is the advantage and disadvantage of measuring feature uncertainty compared with segmentation uncertainty?
+  - Q: Could you discuss the difference between computing feature uncertainty and feature consistency in teacher-student networks?
+  - Segmentation uncertainty: entropy of each predicted pixel class.
+  - Note: Why do we need a teacher-student network here?
+  - Note: [_new_] Feature uncertainty. I do not follow the intuition of measuring feature uncertainty illustrated in the presentation. To compare the consistency of activated regions in the feature maps, why not directly calculate the distance between each feature map in teacher and student networks?
 
+* [x] Shape-aware Semi-supervised 3D Semantic Segmentation for Medical Images (&#9733;)
+  - Speaker: Chuyu Zhang
+  - Q: When computing the adversarial loss to ensure the shape similarity, why do you use the SDM rather than the mask?
+  - Note: The presentation of this paper provides a great overview of existing semi-supervised learning approaches. The fundamental observation of consistency loss is very similar to our AIFT paper (Zhou et al. CVPR 2017). Based upon this, we can devise new active learning criteria for image segmentation.
+  - Note: Their code is publicly available: https://github.com/kleinzcy/SASSnet
 
-* [ ] Shape-aware Semi-supervised 3D Semantic Segmentation for Medical Images - Li, Shuailin; Zhang, Chuyu; He, Xuming, PLUS Lab, Shanghaitech University
-* [ ] Local and Global Structure-aware Entropy Regularized Mean Teacher Model for 3D Left Atrium segmentation - Hang, Wenlong; Feng, Wei; Liang, Shuang; Yu, Lequan; Wang, Qiong; Choi, Kup-Sze; Qin, Jing, Nanjing TECH University
-* [ ] Improving dense pixelwise prediction of epithelial density using unsupervised data augmentation for consistency regularization - To, Minh Nguyen Nhat; Sankineni, Sandeep; Xu, Sheng; Turkbey, Baris; Pinto, Peter A.; Moreno, Vanessa; Merino, Maria; Wood, Bradford J.; Kwak, Jin Tae, Sejong University
+* [x] Local and Global Structure-aware Entropy Regularized Mean Teacher Model for 3D Left Atrium segmentation
+  - Speaker: Wenlong Hang
+  - Q: By entropy minimization principle, the network is forced to make more confident predictions on the object's boundary. However, in practice, even for human experts, it is usually ambiguous to annotated pixels on the object boundary. Therefore, most of the ground truth of the object boundary may not be perfectly correct. I would like to ask your opinion about the entropy minimization principle when facing this issue? 
+  - Q: What is the intuition behind local structure consistency? Why should the local structure be consistent among sub-volumes?
+
+* [x] Improving dense pixelwise prediction of epithelial density using unsupervised data augmentation for consistency regularization
+  - Speaker: Nguyen Nhat Minh To
+  - Q: In your experiment, do the labeled and unlabeled images belong to the same dataset? What if the labeled and unlabeled images come from different domains?
+  - Note: This semi-supervised learning paradigm seems very popular in this MICCAI. I can probably use this paradigm to demonstrate Models Genesis improve domain adaptation / semi-supervised learning.
+
 
 ### Semi-supervised learning B 6:30 AM - 7:00 AM CDT on Monday, 5 October
 
