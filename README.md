@@ -153,11 +153,12 @@
   - Note: Traditional data augmentation includes affine&elastic transformation and photometric transformation. Advanced data augmentation covers data mixing, generative network-based, and adversarial data augmentation.
   - Note: Adversarial noise may not exist in the real world medical imaging, therefore cannot contribute to model generalizability much. This work proposes a realistic adversarial augmentation, designed explicitly for MR imaging.
   - Note: How to evaluate model generalizability?
-  - Note: I love the bias field idea! Compare this with non-linear transformation.
+  - Note: I love the bias field idea! Compare this with non-linear transformation. (https://github.com/airlab-unibas/airlab; https://github.com/fepegar/torchio)
 
 * [x] Learning to Segment Anatomical Structures Accurately from One Exemplar (&#9733;)
   - Speaker: Yuhang Lu
   - Q: How to find the examplar image from a dataset? Have you investigated any performance difference if you choose different images as examplar?
+  - Note: Use feature space to find the sample with lowest distance with all other images.
 
 * [x] Uncertainty estimates as data selection criteria to boost omni-supervised learning (&#9733;)
   - Speaker: Lorenzo Venturini
