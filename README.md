@@ -1,8 +1,8 @@
 # MICCAI2020
 
 ### Questions to panel:
-- Release code? When comparing with other works, what if their work implementation is not publicly available?
-- Dataset size, how to ensure a reliable evaluation when data is small? Limited labeled data make both training and evaluating difficult.
+- Q: Thank you all for the wonderful presentations. Have you released code to reproduce the success in the paper? When comparing with other works, what if their work implementation is not publicly available? How would you ensure a fair comparison in the study?
+- Q: I would like to ask the whole panel to first remind us of the dataset size that you used in the paper. Limited labeled data make both training and evaluating difficult. Many of you proposed wonderful methods to overcome the training challenges using limited data, but how do you ensure a reliable evaluation of the method using such a small labeled data in target tasks? Do you think we still need to collect a large labeled dataset for the evaluation of the methods?
 
 ### General comments:
 - I think supervised domain adaption (SDA) makes more sense than unsupervised domain adaptation (UDA). To evaluate the UDA, we have to collect a large amount of labeled data for the target task anyhow. If the annotation in the target domain cannot be avoided, why not train models in a supervised manner on these annotations? In this case, one may argue that we do not have a test set for the target task. It is true, but we all agree that supervised models are supposed to outperform UDA models in general, so we do not need an additional test set to approve this assumption. Instead of using the annotated data in the target task for evaluation purposes, I would directly employ it as an available annotation for supervised training.
@@ -11,48 +11,54 @@
 
 ### Self-supervised learning A 5:30 AM - 6:00 AM CDT on Monday, 5 October
 
-* [x] Dual-task Self-supervision for Cross-Modality Domain Adaptation - Xue, Yingying; Feng, Shixiang; Zhang, Ya; Zhang, Xiaoyun; Wang, Yan-Feng, Cooperative Medianet Innovation Center, Shang hai Jiao Tong University
+* [x] Dual-task Self-supervision for Cross-Modality Domain Adaptation
+  - Speaker: Yingying Xue
+  - Q: Segmentation ground truth in the edge region of an object, especially in medical images, is usually wrong due to human error. Even two human experts cannot guarantee edge consistency during the annotation process. Do you think it is too restricted, or why do you think it is necessary to train models with this edge consistency loss?
+  - Dual-task: segmentation and edge detection tasks in the source domain.
+  - Note: In the target domain, edge consistency loss is applied.
 
-    - Dual-task: segmentation and edge detection tasks in the source domain.
-    - In the target domain, edge consistency loss is applied.
-    - Segmentation ground truth in the edge region of an object, especially in medical images, is usually wrong due to human error. Even two human experts cannot guarantee edge consistency during the annotation process. Do you think it is too restricted, or why do you think it is necessary to train models with this edge consistency loss?
 
-* [x] Dual-Teacher: Integrating Intra-domain and Inter-domain Teachers for Annotation-efficient Cardiac Segmentation - Li, Kang; Wang, Shujun; Yu, Lequan; Heng, Pheng-Ann, The Chinese University of Hong Kong
+* [x] Dual-Teacher: Integrating Intra-domain and Inter-domain Teachers for Annotation-efficient Cardiac Segmentation
+  - Speaker: Kang Li
+  - Q: Instead of two teachers helping one student, how about two teachers train jointly? The key question is: why do we need a student network as a bridge?
+  - Note: Utilize labeled source domain data (generating synthetic data by CycleGAN), labeled target domain data, and unlabeled target domain data (consistency loss).
+  - Note: This consistency loss is very similar to Extreme Consistency (Fotedar et al. MICCAI 2020).
+  - Note: Since the labeled source domain should also fully annotated for segmenting the same object as the target domain, can I understand this work uses way more annotations than other baselines? For example, I have dataset A (source domain) consisting of 1,000 labeled images for lung segmentation, another dataset B (target domain) with 10 labeled images for lung segmentation. This method adapts labels from A to B so as to, somehow, merge two datasets. I think it is interesting to have a performance reference, in which the model is supervised trained on both datasets A and B, to demonstrate this domain adaptation benefits more than simply merging two datasets and training.
 
-     - Utilize labeled source domain data (generating synthetic data by CycleGAN), labeled target domain data, and unlabeled target domain data (consistency loss).
-     - Instead of two teachers helping one student, how about two teachers train jointly? The key question is: why do we need a student network as a bridge?
-     - This consistency loss is very similar to Extreme Consistency (Fotedar et al. MICCAI 2020).
-     - Since the labeled source domain should also fully annotated for segmenting the same object as the target domain, can I understand this work uses way more annotations than other baselines? For example, I have dataset A (source domain) consisting of 1,000 labeled images for lung segmentation, another dataset B (target domain) with 10 labeled images for lung segmentation. This method adapts labels from A to B so as to, somehow, merge two datasets. I think it is interesting to have a performance reference, in which the model is supervised trained on both datasets A and B, to demonstrate this domain adaptation benefits more than simply merging two datasets and training.
+* [x] Test-time Unsupervised Domain Adaptation
+  - Speaker: Thomas Varsavsky
+  - Q: Could you explain more about the conclusion: "a UDA model will perform better on the unlabeled scans it is trained on than those that are completely unseen." 
+  - Note: Supervised loss + adversarial loss (bringing two domains closer in the feature space) + paired consistency
+   
 
-* [x] Test-time Unsupervised Domain Adaptation - Varsavsky, Thomas; Orbes-Arteaga, Mauricio; Sudre, Carole H.; Graham, Mark S.; Nachev, Parashkev; Cardoso, M. Jorge, University College London
+* [x] Self domain adapted network
+  - Speaker: Yufan He
+  - Note: To thoroughly validate the performance of domain adaptation, large annotated data is needed. With this in mind, why not we train a supervised model directly on this big labeled data?
 
-     - Supervised loss + adversarial loss (bringing two domains closer in the feature space) + paired consistency
-     - I do not understand the conclusion of "a UDA model will perform better on the unlabeled scans it is trained on than those that are completely unseen." 
-
-* [x] Self domain adapted network - He, Yufan; Carass, Aaron; Zuo, Lianrui; Dewey, Blake E.; Prince, Jerry L. johns hopkins university
-
-    - To thoroughly validate the performance of domain adaptation, large annotated data is needed. With this in mind, why not we train a supervised model directly on this big labeled data?
-
-* [x] Entropy Guided Unsupervised Domain Adaptation for Cross-Center Hip Cartilage Segmentation from MRI - Zeng, Guodong; Schmaranzer, Florian; Lerch, Till D.; Boschung, Adam; Zheng, Guoyan; Burger, Jürgen; Gerber, Kate; Tannast, Moritz; Siebenrock, Klaus; Kim, Young-Jo; Novais, Eduardo N.; Gerber, Nicolas University of Bern
-
-    - Unsupervised domain adaption: image appearance adaptation (the one in the Fixed-Point GAN journal version) and feature alignment (learning domain invariant feature).
-    - There are two discriminators: one for distinguishing feature maps between two domains, the other for distingishing entropy maps between two domains (this is new). What is the intuition behind entropy alignment? The purpose explained in the paper is to let model focus more on uncertain regions, but I cannot relate this purpose with the proposed methodology (align entropy maps between source and target domains).
+* [x] Entropy Guided Unsupervised Domain Adaptation for Cross-Center Hip Cartilage Segmentation from MRI
+  - Speaker: Guodong Zeng
+  - Q: What is the intuition behind entropy alignment? The purpose explained in the paper is to let the model focus more on uncertain regions, but how to relate this purpose with the proposed methodology (align entropy maps between source and target domains).
+  - Note: Unsupervised domain adaption: image appearance adaptation (the one in the Fixed-Point GAN journal version) and feature alignment (learning domain invariant feature).
+  - Note: There are two discriminators: one for distinguishing feature maps between two domains, the other for distinguishing entropy maps between two domains (this is new). 
 
 
 
 ### Semi-supervised learning A 6:00 AM - 6:30 AM CDT on Monday, 5 October
 
-* [x] Deep Semi-supervised Knowledge Distillation for Overlapping Cervical Cell Instance Segmentation - Zhou, Yanning; Chen, Hao; Lin, Huangjing; Heng, Pheng-Ann, The Chinese University of HongKong
+* [x] Deep Semi-supervised Knowledge Distillation for Overlapping Cervical Cell Instance Segmentation
+- Speaker: Yanning Zhou
 
     - Semi-supervised learning: consistency regularization, pseudo-labeling, entropy-based methods.
     - 
 
 * [ ] DMNet: Difference Minimization Network for Semi-supervised Segmentation in Medical Images - Fang, Kang; Li, Wu-Jun, Nanjing University
-* [ ] Double-uncertainty Weighted Method for Semi-supervised Learning - Wang, Yixin; Zhang, Yao; Tian, Jiang; Zhong, Cheng; Shi, Zhongchao; Zhang, Yang; He, Zhiqiang Institute of Computing Technology, Chinese Academy of Sciences; University of Chinese Academy of Sciences
 
+* [x] Double-uncertainty Weighted Method for Semi-supervised Learning
+    - Speaker: Yixin Wang
+    - Q: What is the advantage and disadvantage of measuring feature uncertainty compared with segmentation uncertainty?
     - Segmentation uncertainty: entropy of each predicted pixel class.
-    - Why do we need a teacher-student network here?
-    - [_new_] Feature uncertainty. I do not follow the intuition of measuring feature uncertainty illustrated in the presentation. To compare the consistency of activated regions in the feature maps, why not directly calculate the distance between each feature map in teacher and student networks?
+    - Note: Why do we need a teacher-student network here?
+    - Note: [_new_] Feature uncertainty. I do not follow the intuition of measuring feature uncertainty illustrated in the presentation. To compare the consistency of activated regions in the feature maps, why not directly calculate the distance between each feature map in teacher and student networks?
 
 
 * [ ] Shape-aware Semi-supervised 3D Semantic Segmentation for Medical Images - Li, Shuailin; Zhang, Chuyu; He, Xuming, PLUS Lab, Shanghaitech University
@@ -158,10 +164,11 @@
 
 ### Machine Learning Applications A 11:00 AM - 11:30 AM CDT on Monday, 5 October
 
-* [x] Joint Modeling of Chest Radiographs and Radiology Reports for Pulmonary Edema Assessment - Chauhan, Geeticka; Liao, Ruizhi; Wells III, William M.; Andreas, Jacob; Wang, Xin; Berkowitz, Seth; Horng, Steven; Szolovits, Peter; Golland, Polina, Massachusetts Institute of Technology (MIT)
+* [x] Joint Modeling of Chest Radiographs and Radiology Reports for Pulmonary Edema Assessment
+    - Spearker: Geeticka Chauhan
+    - Q: How to train unpaired data?
+    - Note: This paper aims to classify three labels from chest radiographs and their reports. The input consists of a pair of image and text report. They joint train an imaging encoder and a text encoder (BERT), and in the inference, they only take the trained imaging encoder. Experiments show better performance achieved by joint training than isolated training.
 
- - This paper aims to classify three labels from chest radiographs and their reports. The input consists of a pair of image and text report. They joint train an imaging encoder and a text encoder (BERT), and in the inference, they only take the trained imaging encoder. Experiments show better performance achieved by joint training than isolated training.
- - Q: How to train unpaired data?
 
 * [x] Domain-specific loss design for unsupervised physical training: A new approach to modeling medical ML solutions - Burwinkel, Hendrik; Matz, Holger; Saur, Stefan; Hauger, Christoph; Evren, Ayse Mine; Hirnschall, Nino; Findl, Oliver; Navab, Nassir; Ahmadi, Seyed-Ahmad, TU München
 
