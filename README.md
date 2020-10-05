@@ -80,16 +80,6 @@
   - Note: This semi-supervised learning paradigm seems very popular in this MICCAI. I can probably use this paradigm to demonstrate Models Genesis improve domain adaptation / semi-supervised learning.
 
 
-### Semi-supervised learning B 6:30 AM - 7:00 AM CDT on Monday, 5 October
-
-* [ ] Knowledge-guided Pretext Learning for Utero-placental Interface Detection - Qi, Huan; Collins, Sally; Noble, J. Alison, University of Oxford
-* [ ] Self-supervised Depth Estimation to Regularise Semantic Segmentation in Knee Arthroscopy - Liu, Fengbei; Jonmohamadi , Yaqub; Maicas, Gabriel; Pandey, Ajay K.; Carneiro, Gustavo, University of Adelaide
-* [ ] Semi-supervised Medical Image Classification with Global Latent Mixing - Gyawali, Prashnna Kumar; Ghimire, Sandesh; Bajracharya, Pradeep; Li, Zhiyuan; Wang, Linwei, Rochester Institute of Technology
-* [ ] Self-Loop Uncertainty: A Novel Pseudo-Label for Semi-Supervised Medical Image Segmentation - Li, Yuexiang; Chen, Jiawei; Xie, Xinpeng; Ma, Kai; Zheng, Yefeng, Youtu Lab, Tencent
-* [ ] Semi-Supervised Classification of Diagnostic Radiographs with NoTeacher: A Teacher that is not Mean - Unnikrishnan, Balagopal; Nguyen, Cuong Manh; Balaram, Shafa; Foo, Chuan Sheng; Krishnaswamy, Pavitra - Institute for Infocomm Research, A*STAR
-* [ ] Predicting Potential Propensity of Adolescents to Drugs via New Semi-Supervised Deep Ordinal Regression Model - Ganjdanesh, Alireza; Ghasedi, Kamran; Zhan, Liang; Cai, Weidong; Huang, Heng, University of Pittsburgh
-
-
 ### Self-supervised learning B 10:00 AM - 10:30 AM CDT on Monday, 5 October
 
 * [x] User-Guided Domain Adaptation for Rapid Annotation from User Interactions: A Study on Pathological Liver Segmentation
@@ -188,28 +178,29 @@
 
 * [x] Domain-specific loss design for unsupervised physical training: A new approach to modeling medical ML solutions - Burwinkel, Hendrik; Matz, Holger; Saur, Stefan; Hauger, Christoph; Evren, Ayse Mine; Hirnschall, Nino; Findl, Oliver; Navab, Nassir; Ahmadi, Seyed-Ahmad, TU München
 
- - Define a loss function based on physical knowledge. 
+    - Note: Define a loss function based on physical knowledge. 
 
-* [x] Multiatlas Calibration of Biophysical Brain Tumor Growth Models with Mass Effect - Subramanian, Shashank; Scheufele, Klaudius; Himthani, Naveen; Biros, George, University of Texas at Austin
+* [x] Multiatlas Calibration of Biophysical Brain Tumor Growth Models with Mass Effect
 
- - When training Models Genesis using L2 loss, would it be helpful to include an additional regularization term? 
- - This work simulate tumor on MR images. Can model performance in this simulation be clinically reliable towards real tumors?
+    - Q: This work simulate tumor on MR images. Can model performance in this simulation be clinically reliable towards real tumors?
+    - Note: When training Models Genesis using L2 loss, would it be helpful to include an additional regularization term? 
+     
 
-* [x] Chest X-ray Report Generation through Fine-Grained Label Learning - Syeda-Mahmood, Tanveer; Wong, Ken C. L.; Gur, Yaniv; Wu, Joy T.; Jadhav, Ashutosh; Kashyap, Satyananda; Karargyris, Alexandros; Pillai, Anup; Sharma, Arjun; Syed, Ali Bin; Boyko, Orest; Moradi, Mehdi, IBM Research (&#9733;)
+* [x] Chest X-ray Report Generation through Fine-Grained Label Learning (&#9733;)
 
- - This work provides a fine-grained labeled ChestXray dataset by NLP learning from reports and automatic report generation. It represents a systematic framework that can potentially be adopted in the PE dataset and many other datasets associated with clinical texts. I look forward to seeing their dataset and implementation of the entire system.
+    - Note: This work provides a fine-grained labeled ChestXray dataset by NLP learning from reports and automatic report generation. It represents a systematic framework that can potentially be adopted in the PE dataset and many other datasets associated with clinical texts. I look forward to seeing their dataset and implementation of the entire system.
 
-* [x] Spatial Semantic-Preserving Latent Space Learning for Accelerated DWI Diagnostic Report Generation - Gasimova, Aydan; Seegoolam, Gavin; Chen, Liang; Bentley, Paul; Rueckert, Daniel, Imperial College London
+* [x] Spatial Semantic-Preserving Latent Space Learning for Accelerated DWI Diagnostic Report Generation
 
- - Their presentation video has an issue on the website: I can only see half of the talk.
+* [x] Peri-Diagnostic Decision Support Through Cost-Efficient Feature Acquisition at Test-Time
 
-* [x] Peri-Diagnostic Decision Support Through Cost-Efficient Feature Acquisition at Test-Time - Vivar, Gerome; Mullakaeva, Kamilia; Zwergal, Andreas; Navab, Nassir; Ahmadi, Seyed- Ahmad, TUM
+    - Q: What is the difference between cost-efficient feature acquisition and active learning?
+    - Q: Is it possible to use this cost-efficient feature acquisition for image segmentation? 
+    - "Peri-diagnostic": Real-time computer-aided diagnosis. For example, polyp detection.
+    - Note: Feature acquisition heatmaps seem very interesting. But I don't fully understand how they analyze this. 
+ 
+ 
 
- - "Peri-diagnostic": Real-time computer-aided diagnosis. For example, polyp detection.
- - Feature acquisition heatmaps seem very interesting. But I don't fully understand how they analyze this. 
- - What is the difference between cost-efficient feature acquisition and active learning?
- - Is it possible to use this cost-efficient feature acquisition for image segmentation? 
+* [x] A Deep Bayesian Video Analysis Framework: Towards a More Robust Estimation of Ejection Fraction
 
-* [x] A Deep Bayesian Video Analysis Framework: Towards a More Robust Estimation of Ejection Fraction - Kazemi Esfeh, Mohammad Mahdi; Luong, Christina; Behnami, Delaram; Tsang, Teresa ; Abolmaesumi, Purang, University of British Columbia
-
- - Solve a regression problem, making the predicted values more certain.
+    - Note: Solve a regression problem, making the predicted values more certain.
