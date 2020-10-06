@@ -7,7 +7,21 @@
 ### General comments:
 - I think supervised domain adaption (SDA) makes more sense than unsupervised domain adaptation (UDA). To evaluate the UDA, we have to collect a large amount of labeled data for the target task anyhow. If the annotation in the target domain cannot be avoided, why not train models in a supervised manner on these annotations? In this case, one may argue that we do not have a test set for the target task. It is true, but we all agree that supervised models are supposed to outperform UDA models in general, so we do not need an additional test set to approve this assumption. Instead of using the annotated data in the target task for evaluation purposes, I would directly employ it as an available annotation for supervised training.
 
-## Individual paper questions
+### Highlights:
+- MONAI is a good platform for medical imaging that I should use.
+- NVIDIA releases powerful models for COVID-19 segmentation [link](https://ngc.nvidia.com/catalog/models?orderBy=modifiedDESC&pageNumber=0&query=covid&quickFilter=models&filters=)
+- application -> model -> annotation -> data
+
+## Paper reading:
+
+* [x] Difficulty-aware Meta-learning for Rare Disease Diagnosis
+
+- Speaker: Xiaomeng Li
+- Train a model on common diseases and test it on rare diseases. How many predictions does the model output? Equal to # of common diseases or equal to # of (common and rare diseases)?
+- Not sure why use meta-learning instead of transfer learning. What is the fundamental benefits?
+- Difficult-aware: use difficult as weight of loss, larger weights for difficult and smaller weights for easy tasks. But normal backpropagation can automatically do this: difficult batch have higher loss (contribute more on weight updates) and easy batches have lower loss (contribute less). What is the reason to enhance this difference?
+
+## Area chair duty: Prepare questions for individual paper in sessions
 
 ### Self-supervised learning A 5:30 AM - 6:00 AM CDT on Monday, 5 October
 
