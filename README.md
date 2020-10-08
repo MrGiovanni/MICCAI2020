@@ -10,7 +10,10 @@
 ### Highlights:
 - MONAI is a good platform for medical imaging that I should use.
 - NVIDIA releases powerful models for COVID-19 segmentation [link](https://ngc.nvidia.com/catalog/models?orderBy=modifiedDESC&pageNumber=0&query=covid&quickFilter=models&filters=)
-- application -> model -> annotation -> data
+- Application -> model -> annotation -> data
+- MICCAI Reproducibility Checklist [link](https://github.com/JunMa11/MICCAI-Reproducibility-Checklist)
+- Segmentation uncertainty by Jun Ma (I cannot find the paper, but its title is "Estimating Segmentation Uncertainties Like Radiologists")
+- Segmentation uncertainty and error estimation in medical imaging. [slides](https://labels.tue-image.nl/wp-content/uploads/2018/09/Keynote-Joskoxicz.pdf)
 
 ## Paper reading:
 
@@ -23,7 +26,7 @@
 
 * [x] Cascaded Robust Learning at Imperfect Labels for Chest X-ray Segmentation
 
-- Speaker: Xue Cheng
+    - Speaker: Xue Cheng
 
 ## Area chair duty: Prepare questions for individual paper in sessions
 
