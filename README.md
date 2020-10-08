@@ -16,10 +16,14 @@
 
 * [x] Difficulty-aware Meta-learning for Rare Disease Diagnosis
 
-- Speaker: Xiaomeng Li
-- Train a model on common diseases and test it on rare diseases. How many predictions does the model output? Equal to # of common diseases or equal to # of (common and rare diseases)?
-- Not sure why use meta-learning instead of transfer learning. What is the fundamental benefits?
-- Difficult-aware: use difficult as weight of loss, larger weights for difficult and smaller weights for easy tasks. But normal backpropagation can automatically do this: difficult batch have higher loss (contribute more on weight updates) and easy batches have lower loss (contribute less). What is the reason to enhance this difference?
+    - Speaker: Xiaomeng Li
+    - Train a model on common diseases and test it on rare diseases. How many predictions does the model output? Equal to # of common diseases or equal to # of (common and rare diseases)?
+    - Not sure why use meta-learning instead of transfer learning. What is the fundamental benefits?
+    - Difficult-aware: use difficult as weight of loss, larger weights for difficult and smaller weights for easy tasks. But normal backpropagation can automatically do this: difficult batch have higher loss (contribute more on weight updates) and easy batches have lower loss (contribute less). What is the reason to enhance this difference?
+
+* [x] Cascaded Robust Learning at Imperfect Labels for Chest X-ray Segmentation
+
+- Speaker: Xue Cheng
 
 ## Area chair duty: Prepare questions for individual paper in sessions
 
