@@ -14,6 +14,7 @@
 - MICCAI Reproducibility Checklist [link](https://github.com/JunMa11/MICCAI-Reproducibility-Checklist)
 - Segmentation uncertainty by Jun Ma (I cannot find the paper, but its title is "Estimating Segmentation Uncertainties Like Radiologists")
 - Segmentation uncertainty and error estimation in medical imaging. [slides](https://labels.tue-image.nl/wp-content/uploads/2018/09/Keynote-Joskoxicz.pdf)
+- ML Code Completeness Checklist [blog](https://medium.com/paperswithcode/ml-code-completeness-checklist-e9127b168501) | [github](https://github.com/paperswithcode/releasing-research-code) 
 
 ## Paper reading:
 
