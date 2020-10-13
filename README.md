@@ -11,10 +11,19 @@
 - MONAI is a good platform for medical imaging that I should use.
 - NVIDIA releases powerful models for COVID-19 segmentation [link](https://ngc.nvidia.com/catalog/models?orderBy=modifiedDESC&pageNumber=0&query=covid&quickFilter=models&filters=)
 - Application -> model -> annotation -> data
+- ML Code Completeness Checklist [blog](https://medium.com/paperswithcode/ml-code-completeness-checklist-e9127b168501) | [github](https://github.com/paperswithcode/releasing-research-code) 
 - MICCAI Reproducibility Checklist [link](https://github.com/JunMa11/MICCAI-Reproducibility-Checklist)
 - Segmentation uncertainty by Jun Ma (I cannot find the paper, but its title is "Estimating Segmentation Uncertainties Like Radiologists")
 - Segmentation uncertainty and error estimation in medical imaging. [slides](https://labels.tue-image.nl/wp-content/uploads/2018/09/Keynote-Joskoxicz.pdf)
-- ML Code Completeness Checklist [blog](https://medium.com/paperswithcode/ml-code-completeness-checklist-e9127b168501) | [github](https://github.com/paperswithcode/releasing-research-code) 
+- Bias field transformation for MRI imaging (`Chen et al. MICCAI 2020`). Adversarial noise may not exist in the real world medical imaging, therefore cannot contribute to model generalizability much.
+- Learn from an examplar X-ray image - how to find examplar? (`Lu et al. MICCAI 2020`)
+
+## Something I didn't know before
+- Common paradigm of domain adaption / semi-supervised learning. I found the basic idea was clearly presented in (`Minh To et al. MICCAI 2020`). Consider if Models Genesis could help this paradigm (their framework)?
+- Many consistency loss: edge consistency, segmentation consistency (different data-augmentation). The fundamental observation of consistency loss is very similar to our AIFT paper (`Zhou et al. CVPR 2017`). Based upon this, we can devise new active learning criteria for image segmentation.
+- Unsupervised domain adaption consists of image appearance adaptation and feature alignment.
+- Auxiliary self-supervised learning (alternative term for multi-task self-supervised learning or A regularizing B during training )
+- Two interesting concepts: epistemic (model) uncertainty and aleatoric (data) uncertainty (`Venturini et al. MICCAI 2020`)
 
 ## Paper reading:
 
@@ -60,7 +69,7 @@
 * [x] Entropy Guided Unsupervised Domain Adaptation for Cross-Center Hip Cartilage Segmentation from MRI
   - Speaker: Guodong Zeng
   - Q: What is the intuition behind entropy alignment? The purpose explained in the paper is to let the model focus more on uncertain regions, but how to relate this purpose with the proposed methodology (align entropy maps between source and target domains).
-  - Note: Unsupervised domain adaption: image appearance adaptation (the one in the Fixed-Point GAN journal version) and feature alignment (learning domain invariant feature).
+  - Note: Unsupervised domain adaption: image appearance adaptation (the one in the `Fixed-Point GAN journal version`) and feature alignment (learning domain invariant feature).
   - Note: There are two discriminators: one for distinguishing feature maps between two domains, the other for distinguishing entropy maps between two domains (this is new). 
 
 
@@ -85,10 +94,10 @@
   - Note: Why do we need a teacher-student network here?
   - Note: [_new_] Feature uncertainty. I do not follow the intuition of measuring feature uncertainty illustrated in the presentation. To compare the consistency of activated regions in the feature maps, why not directly calculate the distance between each feature map in teacher and student networks?
 
-* [x] Shape-aware Semi-supervised 3D Semantic Segmentation for Medical Images (&#9733;)
+* [x] Shape-aware Semi-supervised 3D Semantic Segmentation for Medical Images
   - Speaker: Chuyu Zhang
   - Q: When computing the adversarial loss to ensure the shape similarity, why do you use the SDM rather than the mask?
-  - Note: The presentation of this paper provides a great overview of existing semi-supervised learning approaches. The fundamental observation of consistency loss is very similar to our AIFT paper (Zhou et al. CVPR 2017). Based upon this, we can devise new active learning criteria for image segmentation.
+  - Note: The presentation of this paper provides a great overview of existing semi-supervised learning approaches. (&#9733;)
   - Note: Their code is publicly available: https://github.com/kleinzcy/SASSnet
 
 * [x] Local and Global Structure-aware Entropy Regularized Mean Teacher Model for 3D Left Atrium segmentation
@@ -141,9 +150,9 @@
   - Note: "Restart U-Net"? Why we need this restart U-Net? If restart U-Net outperforms vanilla U-Net, does it mean the vanilla U-Net has not converged?
   - Note: The method requires ground truth; why is it called self-supervised learning? I think it is more like a co-training.
 
-* [x] Harnessing Uncertainty in Domain Adaptation for MRI Prostate Lesion Segmentation (&#9733;)
+* [x] Harnessing Uncertainty in Domain Adaptation for MRI Prostate Lesion Segmentation 
   - Speaker: Eleni Chiou
-  - Note: Generate high-quality synthetic images as data augmentation for image segmentation tasks. For example, if there are a large number of images and segmentation masks in dataset A, but limited labeled images in dataset B, this method can be used to improve the segmentation accuracy for dataset B.
+  - Note: Generate high-quality synthetic images as data augmentation for image segmentation tasks. For example, if there are a large number of images and segmentation masks in dataset A, but limited labeled images in dataset B, this method can be used to improve the segmentation accuracy for dataset B. (&#9733;)
   - Code: https://github.com/elchiou/DA (not available yet)
 
 
