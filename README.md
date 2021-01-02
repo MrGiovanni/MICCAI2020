@@ -17,6 +17,7 @@
 - Segmentation uncertainty and error estimation in medical imaging. [slides](https://labels.tue-image.nl/wp-content/uploads/2018/09/Keynote-Joskoxicz.pdf)
 - Bias field transformation for MRI imaging (`Chen et al. MICCAI 2020`). Adversarial noise may not exist in the real world medical imaging, therefore cannot contribute to model generalizability much.
 - Learn from an examplar X-ray image - how to find examplar? (`Lu et al. MICCAI 2020`)
+- A reading list for self/semi-supervised learning in MICCAI 2020 https://zhuanlan.zhihu.com/p/266299852
 
 ## Something I didn't know before
 - Common paradigm of domain adaption / semi-supervised learning. I found the basic idea was clearly presented in (`Minh To et al. MICCAI 2020`). Consider if Models Genesis could help this paradigm (their framework)?
